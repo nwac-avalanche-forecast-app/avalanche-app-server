@@ -1,0 +1,26 @@
+{
+  "name": "avalanche-app-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nwac-avalanche-forecast-app/avalanche-app-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nwac-avalanche-forecast-app/avalanche-app-server/issues"
+  },
+  "homepage": "https://github.com/nwac-avalanche-forecast-app/avalanche-app-server#readme",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "pg": "^7.4.1",
+    "superagent": "^3.8.2"
+  }
+}
