@@ -24,19 +24,22 @@ app.get('/forecasts/:zone', (req, res) => {
     .then(data => res.send(JSON.parse(data.text).objects));
 });
 
-app.get('/forecasts/:zone/bottom_line_summary', (req, res) => {
-    const weather = req.query.weather
-    const avalancheDanger = req.query.avalancheDanger
-    const avalancheForecast = req.query.avalancheForecast
-    const healthLabel = req.query.
+app.get('/forecasts/:zone', (req, res) => {
+    const bottom_line_summary = req.query.bottom_line_summary
+    const day1_danger_elev_high = req.query.day1_danger_elev_high
+    const day1_danger_elev_med = req.query.day1_danger_elev_med
+    const day1_danger_elev_low = req.query.day1_danger_elev_low
+    const problems = req.query.problems
+    
 
     superagent
         .get(NWAC_URL + `/avalanche-region-forecast/?format=json&zone=${zone}`)
-        .then(function (result) {
-         console.log("working", result)
-    })
-    .catch(result => console.log("error not working", result))
-})
+        .then(data => {
+            res.send(JSON.parse(data.text).objects)
+    }).catch(result => {
+        console.log("error not working", result);
+    });
+});
 
 app.get('/zones', (req, res) => {
   superagent
